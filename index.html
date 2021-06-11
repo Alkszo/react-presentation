@@ -1,0 +1,443 @@
+<!doctype html>
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Talking about React.js with impress.js</title>
+
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+  
+    <link href="css/react-presentation.css" rel="stylesheet" />
+    <link href="css/impress-common.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported">
+
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+
+<div id="impress"
+    data-transition-duration="1000"
+    
+    data-width="1024"
+    data-height="768"
+    data-max-scale="3"
+    data-min-scale="0"
+    data-perspective="1000"
+    
+    data-autoplay="25">
+
+    <div id="introduction-1" class="step slide" data-x="0" data-y="-1200">
+        <p class="slide-title fade-in-text-1">React.js is a popular library for building interactive web interfaces</p>
+        <p class="slide-text fade-in-text-5">It was developed by facebook and released in 2013 as an open source project. 
+            Since then it has become one of the most widely used tools for front end development
+            and was substantially expanded by community contributions and through new releases by sponsoring company.</p>
+         <p class="slide-note fade-in-text-11">Among other big companies using React there are: Twitter, Netflix, Airbnb, PayPal, The New York Times, Yahoo, Walmart, Uber and Microsoft.</p>   
+    </div>
+    <div id="introduction-2" class="step slide" data-x="1000" data-y="-600" data-rotate="60">
+        <p class="slide-text fade-in-text-1">React is designed around the concept of <b>components</b>, the reusable, declarable parts of web app.</p>
+        <p class="slide-text fade-in-text-3">Components are dynamically rendered based on their <b>props</b> (properties) and <b>state</b>.</p>
+        <p class="slide-middle fade-in-text-7">React features functional and class components</p>
+        <div id="snippets-alongside" class="fade-in-text-11">
+            <pre class="code-snippet"><code>const HelloMessage = ({name}) =&#x3E; {  
+                return (
+                  &#x3C;div&#x3E;
+                    Hello {name}
+                  &#x3C;/div&#x3E;
+                );
+            }
+            
+            ReactDOM.render(
+              &#x3C;HelloMessage name=&#x22;Alex&#x22; /&#x3E;,
+              document.getElementById(&#x27;react-app&#x27;)
+            );</code></pre>
+            <pre class="code-snippet"><code>class HelloMessage extends React.Component {
+                render() {
+                  return (
+                    &#x3C;div&#x3E;
+                      Hello {this.props.name}
+                    &#x3C;/div&#x3E;
+                  );
+                }
+              }
+              
+              ReactDOM.render(
+                &#x3C;HelloMessage name=&#x22;Alex&#x22; /&#x3E;,
+                document.getElementById(&#x27;react-app&#x27;)
+              );</code></pre>
+        </div>
+       <p class="slide-note fade-in-text-15">With the same name prop passed down function and class will produce the same result <span class="result">Hello Alex</span></p>
+    </div>
+    <div id="introduction-3" class="step slide" data-x="1000" data-y="600" data-rotate="120">
+         <p class="slide-text fade-in-text-1">React projects are usually written in <b>JSX</b> (Javascript XML), a syntax extension of Javascript, 
+            which allows writing markup HTML elements alongside JS logic.</p> 
+            <p class="slide-text fade-in-text-5">In a JSX file everything encapsulated in {curly brackets} 
+            behaves according to JS syntax, while ability to declare HTML elements frees React developer 
+            from the need of using DOM manipulation.</p>
+            <p class="slide-text fade-in-text-9"> JSX code have to be compiled (usually by <a href="https://babeljs.io/docs/en/" target="_blank">Babel</a>) to pure Javascript 
+            to be processed by React's inbuilt methods into actual application.</p>
+            <p class="slide-note fade-in-text-17">It is theoretically possible to write React projects in pure JS calling library's methods directly, 
+            but this largely defeats the whole point of this library.</p>
+    </div>
+    <div id="introduction-4" class="step slide" data-x="0" data-y="1200" data-rotate="180">
+        <p class="slide-text fade-in-text-1"> Since we mentioned DOM manipulation, another characteristic React feature is <b>virtual DOM</b>.</p>
+          <p class="slide-text fade-in-text-5">This is a process running entirely in the background through which React determines 
+            the most efficient way to update the actual DOM, thus increasing application's performance.</p>
+            <p class="slide-note fade-in-text-9">You might've noticed ReactDOM.render() called in the components example.</p>
+            <p class="slide-note fade-in-text-13">All you have to do as a developer is invoke this method on the most general component (customarily called App)
+                and let the library handle it from there.</p>
+    </div>
+    <div id="introduction-5" class="step slide" data-x="-1000" data-y="600" data-rotate="240">
+        <p class="slide-title fade-in-text-1">Advantages of using React</p>
+        <ul>
+            <li class="fade-in-text-3">It's fairly straightforward, without a steep learning curve</li>
+            <li class="fade-in-text-7">It's flexible, can be combined with any number of other libraries or used in parts of a project only</li>
+            <li class="fade-in-text-11">It can be used in both web and mobile development</li>
+            <li class="fade-in-text-15">It comes with a large community and an ecosystem of specialized libraries and other resources</li>
+            <li class="fade-in-text-19">Virtual DOM greatly enhances performance</li>
+        </ul>
+    </div>
+    <div id="introduction-6" class="step slide" data-x="-1000" data-y="-600" data-rotate="300">
+        <p class="slide-title fade-in-text-1">A couple of things to consider</p>
+        <ul>
+            <li class="fade-in-text-3">Although not too difficult to learn it requires some getting used to</li>
+            <li class="fade-in-text-7">Projects can be tricky to set up, you may need to use additional resources to achieve desired functionality</li>
+            <li class="fade-in-text-11">A huge open-source ecosystem can be a mixed blessing. You might find yourself including libraries of various code quality and standard, sometimes with insufficient documentation</li>            
+        </ul>
+        <p class="slide-note fade-in-text-17">You should definitely give React a go regardless. In fact we're going to do it</p> <p id="right-now" class="slide-note fade-in-text-21">right now</p>
+    </div>
+    <div id="example-transition" class="step" data-x="0" data-y="0" data-rotate="360" data-autoplay="5">
+        <p class="fade-in-text-1">Let's try</p>
+        <img src="./react-logo.png"/>
+        <p class="fade-in-text-3">a simple example</p>
+    </div>
+  <div id="example-1" class="step example explanation-and-code" data-x="0" data-y="0" data-z="-3000" data-autoplay="30">
+      <div class="example-description">
+        <p class="fade-in-text-1">We will build a very simple site about planets.</p>
+        <p class="fade-in-text-5">This presentation will focus on react components only, not covering (also very basic) styling.</p>
+        <p class="fade-in-text-9">There are a number of ways to start React project, I suggest to use a package manager to set it up for you (<span class="result">~npm create-react-app</span> or <span class="result">~yarn create react-app</span>).</p>
+        <p class="fade-in-text-13">We will work with an array of objects representing each planet in the Solar System.</p>
+        <p class="example-note fade-in-text-21">In real-life projects the data used will be most often fetched from external API.</p>
+      </div>
+      <div>
+        <pre class="code-snippet fade-in-text-17"><code>
+          const planets = [
+    {
+      name: &#x27;Mercury&#x27;,
+      type: &#x27;rocky planet&#x27;,
+      equatorialDiameter: 0.383,
+      mass: 0.06,
+      orbitalPeriod: &#x27;0.24 Earth years&#x27;,
+      orbitalEccentricity: 0.206,
+      rotationPeriod: &#x27;58.65 Earth days&#x27;,
+      moons: 0,
+      img: &#x27;https://upload.wikimedia.org/wikipedia
+      /commons/thumb/d/d9/Mercury_in_color_
+      -_Prockter07-edit1.jpg/900px-
+      Mercury_in_color_-_Prockter07-edit1.jpg&#x27;
+    },
+    {
+      name: &#x27;Venus&#x27;,
+      type: &#x27;rocky planet&#x27;,
+      equatorialDiameter: 0.949,
+      mass: 0.81,
+      orbitalPeriod: &#x27;0.62 Earth years&#x27;,
+      orbitalEccentricity: 0.007,
+      rotationPeriod: &#x27;243.02 Earth days&#x27;,
+      moons: 0,
+      img: &#x27;https://upload.wikimedia.org
+      /wikipedia/commons/c/c7/PIA23791-
+      Venus-RealAndEnhancedContrastViews
+      -20200608_%28cropped%29.jpg&#x27;
+    }, 
+...]
+          </code></pre>
+      </div>
+        
+  </div>
+  <div id="example-2" class="step example" data-x="1000" data-y="600" data-z="-3000" data-rotate="40" data-autoplay="30">
+      <div class="example-description">
+        <p class="fade-in-text-1">Aside from &#x3C;App /&#x3E; we are going to use only three components: &#x3C;Title /&#x3E;, &#x3C;PlanetsList /&#x3E; and &#x3C;Planet /&#x3E;</p>
+        <p class="fade-in-text-5">&#x3C;Title /&#x3E; is the simplest one just conveying basic information about the site.</p>
+        <pre class="code-snippet fade-in-text-9"><code>
+          const Title = () =&#x3E; {
+            return (
+              &#x3C;&#x3E;
+              &#x3C;h1 className=&#x22;title&#x22;&#x3E;A simple page about planets&#x3C;/h1&#x3E;
+              &#x3C;h3 className=&#x22;title&#x22;&#x3E;build in an hour to showcase basic React.js features&#x3C;/h3&#x3E;
+              &#x3C;/&#x3E;
+            )
+          }
+        </code>
+        </pre>
+        <p class="fade-in-text-13">Notice the <b>enclosing tags</b>. This is required by JSX which doesn't allow siblings when returning a render function</p>
+        <p class="fade-in-text-17">Components are conventionally given names starting with capital letters (unlike usually camelcased 
+          js variables)</p>     
+      </div> 
+  </div>
+  <div id= "example-3" class="step example" data-x="800" data-y="1800" data-z="-3000" data-rotate="80" data-autoplay="25">
+    <div class="explanation-and-code">        
+      <p class="explanation-paragraph fade-in-text-1">After defining Title we can return it within the App component</p>
+      <pre class="code-snippet code-block fade-in-text-5"><code>
+        function App() {
+          return (
+           &#x3C;Title /&#x3E;   
+          );
+        }
+      </code>
+      </pre>
+    </div>
+    <p class="center-p fade-in-text-9">Now that's a start</p>
+    <img class="fade-in-text-11" src="./images/example-3.JPG" />
+    <p class="center-p fade-in-text-17">But let's try something a little more complex</p>
+  </div>
+  <div id= "example-4" class="step example" data-x="-200" data-y="2600" data-z="-3000" data-rotate="120" data-autoplay="40">
+    <pre class="code-snippet fade-in-text-1"><code>
+      const PlanetsList = () =&#x3E; {
+        return (
+          &#x3C;div className=&#x22;planets-list&#x22;&#x3E;
+            {planets.map(planet =&#x3E; &#x3C;Planet planet={planet} key={planet.name}/&#x3E;)}
+          &#x3C;/div&#x3E;
+          )
+      }
+      </code></pre>
+      <div class="example-description">
+        <p class="fade-in-text-5">Notice the curly braces surrounding pieces of javascript (both map method and then variables included inside). 
+          This code will iterate over planets array and render a &#x3C;Planet /&#x3E; component within &#x3C;PlanetsList /&#x3E; 
+          for every object in the array.</p>
+          <p class="fade-in-text-11">An object containing informations about given planet is passed down as prop to each &#x3C;Planet /&#x3E; component. </p>
+          <p class="example-note fade-in-text-17">Note: in React props are only ever passed down the component hierarchy.
+             If you need to send information back to parent component, you'll have to pass down an appropriate callback function.</p>
+          <p class="example-note fade-in-text-21">Note: it is a good practice to give each element a unique {key} while using iterative methods on components. 
+             While not necessary to render content they help React inner-workings and will prevent it from throwing errors in the console.</p>
+      </div>
+      
+  </div>
+  <div id= "example-5" class="step example" data-x="-1400" data-y="2400" data-z="-3000" data-rotate="160" data-autoplay="30">
+    <div class="explanation-and-code">
+      <p class="explanation-paragraph fade-in-text-1">For start let's write a basic placeholder &#x3C;Planet /&#x3E; component. </p>
+      <pre class="code-snippet code-block fade-in-text-5"><code>
+        class Planet extends Component {
+          render() {
+            const planet = this.props.planet
+            
+            return(
+              &#x3C;p&#x3E;{planet.name}&#x3C;/p&#x3E;
+            )
+          }
+        }  
+      </code></pre>
+    </div>
+    <img class="fade-in-text-9" src="./images/example-5.JPG"/>
+  <div class="explanation-and-code fade-in-text-13">
+    <p class="explanation-paragraph">Everything looks fine and name prop is properly passed. 
+      We can expand our component to include all available informations.</p>
+    <pre class="code-snippet-small code-block fade-in-text-17"><code>
+      return(
+      &#x3C;div className=&#x22;planet-card&#x22;&#x3E;
+       &#x3C;p className=&#x22;planet-name&#x22;&#x3E;{planet.name}&#x3C;/p&#x3E;
+       &#x3C;img src={planet.img} alt={planet.name}/&#x3E;
+       &#x3C;div className=&#x22;planet-details&#x22;&#x3E;
+        &#x3C;p&#x3E;type: {planet.type}&#x3C;/p&#x3E;
+        &#x3C;p&#x3E;equatorial diameter: {planet.equatorialDiameter} &#x3C;/p&#x3E;
+        &#x3C;p&#x3E;mass: {planet.mass}&#x3C;/p&#x3E;
+        &#x3C;p&#x3E;orbital period: {planet.orbitalPeriod}&#x3C;/p&#x3E;
+        &#x3C;p&#x3E;eccentricity of orbit: {planet.orbitalEccentricity}&#x3C;/p&#x3E;
+        &#x3C;p&#x3E;time to rotate around the Sun: {planet.rotationPeriod}&#x3C;/p&#x3E;
+        &#x3C;p&#x3E;number of confirmed moons: {planet.moons}&#x3C;/p&#x3E;
+       &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+    )
+    </code></pre>
+  </div>
+  </div>
+  <div id= "example-6" class="step example" data-x="-2600" data-y="1800" data-z="-3000" data-rotate="200" data-autoplay="15">
+    <img class="fade-in-text-3" src="./images/example-6.JPG"/>
+  </div>
+  <div id= "example-7" class="step example" data-x="-3800" data-y="1000" data-z="-3000" data-rotate="240" data-autoplay="37">
+    <p><span class="fade-in-text-1">Every change to objects in planets array will be now expressed in the content displayed on the website.</span> 
+      <span class="fade-in-text-5">You can easily give Saturn additional moon or two (no one will notice),</span> 
+      <span class="fade-in-text-9">remove all objects beyond Saturn to represent humanity's knowledge of Solar System before 1781</span> 
+      <span class="fade-in-text-13">or expand the array to redress injustice done to Pluto.</span> 
+      <span class="fade-in-text-19">It's not hard to imagine how such responsiveness to data change is useful
+        if one consider an app running on top of regularly updated back-end.</span></p>
+    <p class="fade-in-text-23">For our example we would content ourselves with one more feature of basic interactivity. 
+      Right now the planet cards are cluttered with lots of detailed informations, so we will add an option 
+      to toggle specifics about things like mass or eccentricity with only planet name and picture displayed by default. 
+      For that we need to introduce state.</p>
+  </div>
+  <div id= "example-8" class="step example" data-x="-5000" data-y="0" data-z="-3000" data-rotate="280" data-autoplay="45">
+    <div class="explanation-and-code">
+      <p class="explanation-paragraph fade-in-text-7">First let's add this code inside &#x3C;Planet/&#x3E;.
+        A class component requires only render method called to be working, 
+        but with constructor also invoked we can define component&#x27;s state. 
+        Afterwards a method is defined to change it using React&#x27;s inbuilt setState()</p>
+      <pre class="code-snippet code-block fade-in-text-1"><code>
+        constructor(props){
+          super(props);
+          this.state = {extend: false};
+        }
+        
+       toggle = () =&#x3E; {
+        this.setState({
+          extend: !this.state.extend
+        })
+      }
+      </code></pre>
+    </div>
+    <div class="explanation-and-code">
+      <p id="tight-explanation" class="fade-in-text-21" >Now let&#x27;s update Planet&#x27;s render method. The js &#x26;&#x26; (AND) logical operator 
+        is used for <b>conditional rendering</b> in React. Certain parts of our component will be displayed 
+        depending on how state is evaluated. The only thing left to do is binding toggle to click events. 
+        React makes it very easy, so on the next slide we are going to show final version of &#x3C;Planet /&#x3E; component.</p>
+      <pre class="code-snippet fade-in-text-15"><code>
+  render() {
+    const planet = this.props.planet
+          
+    return(
+      &#x3C;div className=&#x22;planet-card&#x22;&#x3E;
+        &#x3C;p className=&#x22;planet-name&#x22;&#x3E;{planet.name}&#x3C;/p&#x3E;
+        &#x3C;img src={planet.img} alt={planet.name}/&#x3E;
+        {!this.state.extend &#x26;&#x26; &#x3C;p className=&#x22;toggle&#x22;&#x3E;See more informations &#x25BC;&#x3C;/p&#x3E;}
+        {this.state.extend &#x26;&#x26; &#x3C;div className=&#x22;planet-details&#x22;&#x3E;
+           .
+           .
+           .
+           &#x3C;p className=&#x22;toggle&#x22;&#x3E;Hide &#x25B2;&#x3C;/p&#x3E;
+        &#x3C;/div&#x3E;}
+      &#x3C;/div&#x3E;
+    )
+  }
+      </code></pre>
+    </div>    
+    
+  </div>
+  <div id= "example-9" class="step example" data-x="-4600" data-y="-1200" data-z="-3000" data-rotate="320" data-autoplay="30">
+    <pre class="code-snippet fade-in-text-1"><code>
+      class Planet extends Component {
+        constructor(props){
+          super(props);
+          this.state = {extend: false};
+        }
+        
+       toggle = () =&#x3E; {
+        this.setState({
+          extend: !this.state.extend
+        })
+      }
+      
+        render() {
+          const planet = this.props.planet
+          
+          return(
+            &#x3C;div className=&#x22;planet-card&#x22;&#x3E;
+             &#x3C;p className=&#x22;planet-name&#x22;&#x3E;{planet.name}&#x3C;/p&#x3E;
+             &#x3C;img src={planet.img} alt={planet.name}/&#x3E;
+             {!this.state.extend &#x26;&#x26; &#x3C;p className=&#x22;toggle&#x22; onClick={this.toggle}&#x3E;See more informations &#x25BC;&#x3C;/p&#x3E;}
+             {this.state.extend &#x26;&#x26; &#x3C;div className=&#x22;planet-details&#x22;&#x3E;
+                &#x3C;p&#x3E;type: {planet.type}&#x3C;/p&#x3E;
+                &#x3C;p&#x3E;equatorial diameter: {planet.equatorialDiameter} &#x3C;/p&#x3E;
+                &#x3C;p&#x3E;mass: {planet.mass}&#x3C;/p&#x3E;
+                &#x3C;p&#x3E;orbital period: {planet.orbitalPeriod}&#x3C;/p&#x3E;
+                &#x3C;p&#x3E;eccentricity of orbit: {planet.orbitalEccentricity}&#x3C;/p&#x3E;
+                &#x3C;p&#x3E;time to rotate around the Sun: {planet.rotationPeriod}&#x3C;/p&#x3E;
+                &#x3C;p&#x3E;number of confirmed moons: {planet.moons}&#x3C;/p&#x3E;
+                &#x3C;p className=&#x22;toggle&#x22; onClick={this.toggle}&#x3E;Hide &#x25B2;&#x3C;/p&#x3E;
+             &#x3C;/div&#x3E;}
+            &#x3C;/div&#x3E;     
+          )
+        }
+      }
+    </code></pre>
+    <p class="example-note fade-in-text-13">Notice specific JSX syntax used to assign event handlers: onClick={function}</p>
+  </div>
+  <div id= "example-10" class="step example" data-x="-3400" data-y="-1600" data-z="-3000" data-rotate="360" data-autoplay="15">
+    <img class="fade-in-text-1" src="./images/example-10.JPG"/>
+  </div>
+  <div id= "example-11" class="step example" data-x="-2200" data-y="-1200" data-z="-3000" data-rotate="395" data-autoplay="35">
+    <p class="center-p fade-in-text-1"><b>To sum up</b></p>
+    <div class="example-description">
+      <p class="fade-in-text-3">We have created a site with three components:</p>
+      <p class="fade-in-text-7"><b>&#x3C;Title /&#x3E;</b> is in fact two header elements combined together</p>
+      <p class="fade-in-text-11"><b>&#x3C;PlanetsList /&#x3E;</b> iterates over data and pass it down to children components while rendering them 
+        (and also provides a handy container for styling purposes)</p>
+      <p class="fade-in-text-17"><b>&#x3C;Planet /&#x3E;</b> displays passed data and utilises state to provide toggle functionality</p>
+      <p class="fade-in-text-21">You can visit our example page <a href="https://alkszo.github.io/planets/" target="_blank">here</a> and inspect source code <a href="https://github.com/Alkszo/planets/blob/master/src/components/App.js" target="_blank">here</a></p>
+      <p class="fade-in-text-25">In the last part of this presentation we'll touch on some more advanced React concepts</p>
+    </div>    
+  </div>
+  <div id="hooks" class="step feature" data-x="-2200" data-y="-1200" data-z="0" data-rotate="35">
+    <p class="feature-title">&#x3C;Hooks /&#x3E;</p>
+    <p class="feature-smaller fade-in-text-3">Starting with version 16.8 React introduces <a href="https://reactjs.org/docs/hooks-intro.html" target="_blank">hooks</a>, which allows to use state in functional components. 
+      All you need to do to is import {useState} from React library. Hooks address number of issues such as code 
+      reusability and readability and are generally recommended solution in today's React. 
+      That being said everything is backward compatible and class components still work throughout React versions. </p>
+      <p class="fade-in-text-9">In the planets example the old style class component was used but same can be achieved through hooks. 
+        You can find the alternative version commented out in the <a href="https://github.com/Alkszo/planets/blob/master/src/components/App.js" target="_blank">source code</a></p>
+  </div>
+  <div id="lifecycle" class="step feature" data-x="-2500" data-y="0" data-z="0" data-rotate="-20" data-autoplay="25">
+    <p class="feature-title">&#x3C;Lifecycle /&#x3E;</p>
+    <p class="fade-in-text-3">React features a host of <a href="https://reactjs.org/docs/react-component.html" target="_blank">lifecycle methods</a> allowing to perform actions 
+      and data manipulations at specific moments during component rendering.</p>
+      <p class="feature-smaller fade-in-text-7">For example componentDidMount() runs immediately after initial render 
+        and may be used to fetch data from remote endpoint</p>
+        <p class="feature-smaller fade-in-text-11">componentDidUpdate() can be used to dynamically respond to content changes</p>
+        <p class="feature-smaller fade-in-text-15">componentWillUnmount() serves for clean-up purposes (e.g. resetting timers, cancelling web requests)</p>
+        <p class="fade-in-text-19">Initially available to class components, lifecycle methods now have their hook equivalents.</p>
+  </div>
+  <div id="router" class="step feature" data-x="-2300" data-y="900" data-z="0" data-rotate="20">
+    <p class="feature-title">&#x3C;Routs /&#x3E;</p>
+    <p class="fade-in-text-3">React is designed principally to build single-page application. <a href="https://reactrouter.com/" target="_blank">React Router</a> is an extension to basic library 
+      that brings along a toolkit to provide your React app with custom urls and to set up navigation between components.</p>
+  </div>
+  <div id="context" class="step feature" data-x="2500" data-y="-1000" data-z="0" data-rotate="-25">
+    <p class="feature-title">&#x3C;Context API /&#x3E;</p>
+    <p class="fade-in-text-3"><a href="https://reactjs.org/docs/context.html" target="_blank">React Context</a> provides a way to access certain props from anywhere within components 
+      hierarchy without the need for passing them down many levels.</p>
+      <p class="fade-in-text-7">It is especially suited for coding things such as different styling themes or different language versions of your app.</p>
+  </div>
+  <div id="next" class="step feature" data-x="2500" data-y="600" data-z="0" data-rotate="30" data-autoplay="30">
+    <p class="feature-title">What&#x27;s Next.js?</p>
+    <p class="fade-in-text-3">If you get into React seriously, you should consider learning about <a href="https://nextjs.org/" target="_blank">Next.js</a></p>
+    <p class="fade-in-text-7">It's a React based production framework which allows, among other things, for server-side rendering and creating static pages.</p>
+    <p class="fade-in-text-11">While relatively fresh product it's intensely developed and definitely something to keep an eye on.</p>
+    <p><span class="fade-in-text-17">And that's all about React basics.</span> <span class="fade-in-text-21">Thanks for watching and happy coding!</span></p>
+  </div>
+    <div id="overview" class="step" data-x="0" data-y="0" data-z="0" data-scale="4.5" >
+    </div>
+
+</div>
+
+<div id="impress-toolbar"></div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate. <br/>
+       Press 'P' to launch speaker console.</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Swipe left or right to navigate</p>";
+}
+</script>
+
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+
+</body>
+</html>
+

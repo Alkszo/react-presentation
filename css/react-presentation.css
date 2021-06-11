@@ -1,0 +1,487 @@
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    min-height: 740px;
+    background: rgba(240, 240, 240, 0.9);
+}
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+.step {
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+    text-align: left;
+    font-family: 'PT Serif', georgia, serif;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+
+.impress-enabled .step {
+    margin: 0;
+    opacity: 0.1;
+    transition: opacity 1s;
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+b {
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.slide a, .example a {
+    background-color: whitesmoke;
+    color: black;
+    font-weight: 700;
+}
+
+.slide a:visited, .example a:visited {
+    color: purple;
+}
+
+.feature a {
+    background-color: rgb(241, 212, 212);
+    color: rgb(114, 110, 110);
+    font-weight: 800;
+}
+
+.feature a:visited {
+    color: purple;
+}
+
+.slide {
+    display: block;
+    width: 800px;
+    height: 600px;
+    background-color: rgba(35, 35, 37);
+    border: 1px solid rgba(0, 0, 0, );
+    border-radius: 10px;
+    box-shadow: 10px 10px 6px 5px rgba(3, 210, 250);
+    color: white;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+    text-align: left;
+}
+
+.code-snippet {    
+    font-size: 15px;
+    line-height: 17px;
+    background-color: whitesmoke;
+    color: black;    
+    padding: 5px;
+}
+
+.code-snippet-small {    
+    font-size: 12.5px;
+    line-height: 14px;
+    background-color: whitesmoke;
+    color: black;    
+    padding: 2px;
+}
+
+code {
+    font-family: monospace;
+}
+
+.result {
+    color: black;
+    background-color: whitesmoke;
+}
+
+.slide-text {
+    letter-spacing: 0px;
+}
+
+.slide-title {
+    font-size: 45px;
+    line-height: 55px;
+    font-weight: bold;
+}
+
+.slide-note {
+    font-size: 25px;
+    line-height: 30px;
+    align-self: baseline;
+}
+
+.slide-middle {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+}
+
+.slide ul {
+    line-height: 40px;
+}
+
+#example-transition img {
+    display: inline-block;
+    width: 800px;
+}
+
+#example-transition {
+    text-align: center;
+}
+
+#snippets-alongside {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#right-now {
+    text-align: center;
+}
+
+.example {
+    display: block;
+    width: 900px;
+    height: 650px;
+    background-color: rgba(35, 35, 37);
+    border: 1px solid rgba(0, 0, 0, );
+    border-radius: 10px;
+    box-shadow: -10px -10px 6px 5px rgba(3, 210, 250);
+    color: white;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+    text-align: left;
+}
+
+.example-description {
+    font-size: 25px;
+    line-height: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.example-note {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.explanation-and-code {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+}
+
+.explanation-paragraph {
+    font-size: 25px;
+    line-height: 30px;
+    padding: 10px;
+    width: 45%;
+}
+
+.code-block {
+    width: 45%
+}
+
+.feature-title {
+    font-size: 70px;
+    text-align: center;
+}
+
+.example img {
+    width: 99%;
+    align-self: center;
+    background-color: whitesmoke;
+    padding: 2px;
+}
+
+.center-p {
+    align-self: center;
+}
+
+#example-3, #example-5 {
+    display: flex;
+    flex-direction: column;
+}
+
+#tight-explanation {
+    padding: 10px;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: justify;
+}
+
+#tight-explanation b {
+    font-weight: 800;
+    letter-spacing: 0px;
+}
+
+#example-10 {
+    text-align: center;
+}
+
+#example-10 img {
+    height: 100%;
+    width: auto;
+    align-self: center;
+}
+
+#example-11 {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-smaller {
+    font-size: 25px;
+}
+
+#overview { display: none }
+
+
+.impress-on-overview .step {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.impress-on-overview .step.example {
+    opacity: 0.1;
+    cursor: default;   
+}
+
+.step.active .fade-in-text-1 {    
+    animation: fadeInSmooth linear 1.5s;
+    -webkit-animation: fadeInSmooth linear 1.5s;
+    -moz-animation: fadeInSmooth linear 1.5s;
+    -o-animation: fadeInSmooth linear 1.5s;
+    -ms-animation: fadeInSmooth linear 1.5s;    
+}
+
+.step.active .fade-in-text-3 {    
+    animation: fadeIn linear 3s;
+    -webkit-animation: fadeIn linear 3s;
+    -moz-animation: fadeIn linear 3s;
+    -o-animation: fadeIn linear 3s;
+    -ms-animation: fadeIn linear 3s;    
+}
+
+.step.active .fade-in-text-5 {    
+    animation: fadeIn linear 5s;
+    -webkit-animation: fadeIn linear 5s;
+    -moz-animation: fadeIn linear 5s;
+    -o-animation: fadeIn linear 5s;
+    -ms-animation: fadeIn linear 5s;    
+}
+
+.step.active .fade-in-text-7 {    
+    animation: fadeIn linear 7s;
+    -webkit-animation: fadeIn linear 7s;
+    -moz-animation: fadeIn linear 7s;
+    -o-animation: fadeIn linear 7s;
+    -ms-animation: fadeIn linear 7s;    
+}
+
+.step.active .fade-in-text-9 {    
+    animation: fadeIn linear 9s;
+    -webkit-animation: fadeIn linear 9s;
+    -moz-animation: fadeIn linear 9s;
+    -o-animation: fadeIn linear 9s;
+    -ms-animation: fadeIn linear 9s;    
+}
+
+.step.active .fade-in-text-11 {    
+    animation: fadeIn linear 11s;
+    -webkit-animation: fadeIn linear 11s;
+    -moz-animation: fadeIn linear 11s;
+    -o-animation: fadeIn linear 11s;
+    -ms-animation: fadeIn linear 11s;    
+}
+
+.step.active .fade-in-text-13 {    
+    animation: fadeIn linear 13s;
+    -webkit-animation: fadeIn linear 13s;
+    -moz-animation: fadeIn linear 13s;
+    -o-animation: fadeIn linear 13s;
+    -ms-animation: fadeIn linear 13s;    
+}
+
+.step.active .fade-in-text-15 {    
+    animation: fadeIn linear 15s;
+    -webkit-animation: fadeIn linear 15s;
+    -moz-animation: fadeIn linear 15s;
+    -o-animation: fadeIn linear 15s;
+    -ms-animation: fadeIn linear 15s;    
+}
+
+.step.active .fade-in-text-17 {    
+    animation: fadeIn linear 17s;
+    -webkit-animation: fadeIn linear 17s;
+    -moz-animation: fadeIn linear 17s;
+    -o-animation: fadeIn linear 17s;
+    -ms-animation: fadeIn linear 17s;    
+}
+
+.step.active .fade-in-text-19 {    
+    animation: fadeIn linear 19s;
+    -webkit-animation: fadeIn linear 19s;
+    -moz-animation: fadeIn linear 19s;
+    -o-animation: fadeIn linear 19s;
+    -ms-animation: fadeIn linear 19s;    
+}
+
+.step.active .fade-in-text-21 {    
+    animation: fadeIn linear 21s;
+    -webkit-animation: fadeIn linear 21s;
+    -moz-animation: fadeIn linear 21s;
+    -o-animation: fadeIn linear 21s;
+    -ms-animation: fadeIn linear 21s;    
+}
+
+.step.active .fade-in-text-23 {    
+    animation: fadeIn linear 23s;
+    -webkit-animation: fadeIn linear 23s;
+    -moz-animation: fadeIn linear 23s;
+    -o-animation: fadeIn linear 23s;
+    -ms-animation: fadeIn linear 23s;    
+}
+
+.step.active .fade-in-text-25 {    
+    animation: fadeIn linear 25s;
+    -webkit-animation: fadeIn linear 25s;
+    -moz-animation: fadeIn linear 25s;
+    -o-animation: fadeIn linear 25s;
+    -ms-animation: fadeIn linear 25s;    
+}
+
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    90% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    90% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    90% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    90% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    90% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @keyframes fadeInSmooth {
+    0% {opacity:0;}    
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeInSmooth {
+    0% {opacity:0;}    
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeInSmooth {
+    0% {opacity:0;}    
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeInSmooth {
+    0% {opacity:0;}    
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeInSmooth {
+    0% {opacity:0;}    
+    100% {opacity:1;}
+  }
+
+.hint {
+
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 200px;
+
+    background: rgba(0,0,0,0.5);
+    color: #EEE;
+    text-align: center;
+
+    font-size: 50px;
+    padding: 20px;
+
+    z-index: 100;
+    opacity: 0;
+    -webkit-transform: translateY(400px);
+    -moz-transform:    translateY(400px);
+    -ms-transform:     translateY(400px);
+    -o-transform:      translateY(400px);
+    transform:         translateY(400px);
+    -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
+    -moz-transition:    opacity 1s,    -moz-transform 0.5s 1s;
+    -ms-transition:     opacity 1s,     -ms-transform 0.5s 1s;
+    -o-transition:      opacity 1s,      -o-transform 0.5s 1s;
+    transition:         opacity 1s,         transform 0.5s 1s;
+}
+
+
+.impress-enabled .hint { display: block }
+
+
+.impress-on-bored .hint {
+
+    opacity: 1;
+
+    -webkit-transform: translateY(0px);
+    -moz-transform:    translateY(0px);
+    -ms-transform:     translateY(0px);
+    -o-transform:      translateY(0px);
+    transform:         translateY(0px);
+    -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s 4.5s;
+    -moz-transition:    opacity 1s 5s,    -moz-transform 0.5s 4.5s;
+    -ms-transition:     opacity 1s 5s,     -ms-transform 0.5s 4.5s;
+    -o-transition:      opacity 1s 5s,      -o-transform 0.5s 4.5s;
+    transition:         opacity 1s 5s,         transform 0.5s 4.5s;
+}
+
